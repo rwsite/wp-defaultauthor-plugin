@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: Default Post Author
- * Description: Adds Default post author settings for post publish metabox.
+ * Plugin Name: Post Default Author
+ * Description: Add Default post author settings for post publish metabox
  * Version:     1.0.0
  * Author:      Aleksey Tikhomirov
  * Author URI:  http://rwsite.ru
