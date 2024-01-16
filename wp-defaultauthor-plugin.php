@@ -3,12 +3,15 @@
  * Plugin Name: Post Default Author
  * Description: Add Default post author settings for post publish metabox
  * Version:     1.0.0
- * Author:      Aleksey Tikhomirov
- * Author URI:  http://rwsite.ru
+ * Author:      Alex T
+ * Author URI:  https://rwsite.ru
  *
- * Requires at least: 4.6
- * Tested up to: 6.3
- * Requires PHP: 8.0+
+ * Requires at least: 5.0
+ * Tested up to: 6.8
+ * License: GPLv3 or later
+ *
+ * Text Domain: wp-addon
+ * Domain Path: /languages/
  */
 
 defined( 'ABSPATH' ) or die( 'Nothing here!' );
