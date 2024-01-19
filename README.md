@@ -8,5 +8,5 @@ Wordpress default author plugin
 ![Choose default author](https://i.imgur.com/WrxbbV5.png)  
 3. Create a new post, and save. Post author will be changes to default.
 ![Create a new post](https://i.imgur.com/BaXtrI7.png)
-4. Profit!
-![Create a new post](https://i.imgur.com/j09z0kV.png)
+4. Profit! <br>
+![Profitt](https://i.imgur.com/j09z0kV.png)
