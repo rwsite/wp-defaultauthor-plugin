@@ -3,15 +3,16 @@
  * Plugin Name: Post Default Author
  * Description: Add Default post author settings for post publish metabox
  * Version:     1.0.0
- * Author:      Alex T
+ * Author:      Aleksei Tikhomirov
  * Author URI:  https://rwsite.ru
  *
  * Requires at least: 5.0
  * Tested up to: 6.8
+ * Requires PHP: 7.4+
  * License: GPLv3 or later
  *
- * Text Domain: wp-addon
- * Domain Path: /languages/
+ *  Text Domain: wp-addon
+ *  Domain Path: /languages/
  */
 
 defined( 'ABSPATH' ) or die( 'Nothing here!' );
@@ -20,7 +21,7 @@ class DefaultPostAuthor
 {
     public $key = 'users';
 
-    /** @var WP_User */
+    /** @var \WP_User */
     public $user;
 
     /** @var int */
@@ -86,7 +87,7 @@ class DefaultPostAuthor
         $user = WP_User::get_data_by('ID', $user_id);
         ?>
         <div id="message" class="notice notice-warning is-dismissible">
-            <p><?php echo esc_html__('The author of the post will be changed to ', 'wp-addon') . $user->display_name; ?></p>
+            <p><?php echo sprintf( esc_html__('The author of the post will be changed to %s after post to be saving.', 'wp-addon'), $user->display_name); ?></p>
         </div>
         <?php
     }
@@ -155,17 +156,15 @@ class DefaultPostAuthor
      */
     public function ajax(){
         global $wpdb;
+
         $post_id = (int) $_POST['post_id'];
         $user_id = (int) $_POST['user_value'];
         $current_user_id = (int) $_POST['current_user_id'];
 
-        //$new_post_author = \WP_User::get_data_by('ID', $user_id);
-        //$post = WP_Post::get_instance($post_id);
-
         // update current user settings
         update_user_meta($current_user_id, $this->user_meta_key, $user_id);
         // update current post settings
-        $r = $wpdb->update($wpdb->posts,['post_author' => $user_id],['id' =>$post_id]);
+        $r = $wpdb->update($wpdb->posts, ['post_author' => $user_id], ['id' =>$post_id]);
         if(is_int($r)){
             echo esc_html__('Successfully saved', 'wp-addon');
         }
@@ -197,7 +196,7 @@ class DefaultPostAuthor
                     wp_dropdown_users( $args );
                     ?>
                     <span class="description">
-						<?php _e( 'Select the default author, this will overwrite the global settings.', 'wp-addon' ); ?>
+						<?php esc_html_e( 'Select the default author', 'wp-addon' ); ?>
 					</span>
                 </td>
             </tr>
