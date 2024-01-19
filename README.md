@@ -2,6 +2,7 @@
 Wordpress default author plugin
 
 ## How to use:
+0. Install and activate the plugin
 1. Create default author and set role "editor" or highest ('editor', 'author', 'administrator').
 ![create author](https://i.imgur.com/I0XygRp.png)
 2. Choose default author for current user (or somebody user)
