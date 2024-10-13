@@ -3,6 +3,7 @@
   "description": "WordPress Plugin. Add Default post author settings for post publish metabox",
   "minimum-stability": "stable",
   "license": "proprietary",
+  "type": "wordpress-plugin",
   "authors": [
     {
       "name": "Aleksei Tikhomirov",
