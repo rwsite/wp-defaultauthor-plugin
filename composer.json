@@ -1,6 +1,6 @@
 {
   "name": "rwsite/wp-defaultauthor-plugin",
-  "description": "WordPress wp-defaultauthor-plugin Plugin.",
+  "description": "WordPress Plugin. Add Default post author settings for post publish metabox",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
